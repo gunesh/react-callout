@@ -6,7 +6,10 @@ const Callout = (props) => {
   const [seconds, setSeconds] = React.useState(props.second);
   const [modal, setModal] = useState(true);
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    props.onFinish();
+    setModal(!modal);
+  };
   React.useEffect(() => {
     startCount();
   });
@@ -22,6 +25,7 @@ const Callout = (props) => {
   };
   return (
     <React.Fragment>
+      
       {props.message && (
         <Modal isOpen={modal} toggle={toggle}>
           <div
@@ -42,9 +46,6 @@ const Callout = (props) => {
             <Button color="primary" onClick={toggle}>
               Ok
             </Button>{' '}
-            {/* <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button> */}
           </ModalFooter>
         </Modal>
       )}
