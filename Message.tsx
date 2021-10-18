@@ -23,19 +23,17 @@ const useTimer = ({
   );
   const start = () => setRunning(true);
   const pause = () => setRunning(false);
-  const reset = () => setSeconds(0);
   const stop = () => {
     pause();
-    reset();
   };
 
   use1Second(tick);
 
-  return { pause, reset, running, seconds, start, stop };
+  return { pause, running, seconds, start, stop };
 };
 
 const Message = (props) => {
-  const { pause, reset, running, seconds, start, stop } = useTimer();
+  const { pause, running, seconds, start, stop } = useTimer();
   const { message, second } = props;
   const [width, setWidth] = useState(100);
   React.useEffect(() => {
@@ -51,9 +49,9 @@ const Message = (props) => {
     <React.Fragment>
       {getTimerInfo()}
       <div className="callout" onMouseOver={pause} onMouseLeave={start}>
-      <div
+        <div
           style={{
-            width: `${width-((width/second)*seconds)}%`,
+            width: `${width - (width / second) * seconds}%`,
             backgroundColor: 'green',
             height: '3px',
           }}
