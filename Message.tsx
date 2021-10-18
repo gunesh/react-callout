@@ -1,4 +1,4 @@
-import React,{ useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 
 const interval =
   (delay = 0) =>
@@ -34,13 +34,46 @@ const useTimer = ({
   return { pause, reset, running, seconds, start, stop };
 };
 
-const Message = () => {
+const Message = (props) => {
   const { pause, reset, running, seconds, start, stop } = useTimer();
-
+  const { message, second } = props;
+  const [width, setWidth] = useState(100);
+  React.useEffect(() => {
+    start();
+  }, []);
+  const getTimerInfo = () => {
+    if (second === seconds) {
+      console.log('Timer Off');
+      props.onFinish();
+    }
+  };
   return (
-    <div  onMouseOver={pause} onLoad={start} onMouseLeave={start}>
-      <h1>{seconds}</h1>
-    </div>
+    <React.Fragment>
+      {getTimerInfo()}
+      <div className="callout" onMouseOver={pause} onMouseLeave={start}>
+      <div
+          style={{
+            width: `${width-((width/second)*seconds)}%`,
+            backgroundColor: 'green',
+            height: '3px',
+          }}
+        />
+        <div className="calloutHeading"></div>
+        <span
+          className="close"
+          onClick={() => {
+            props.onFinish();
+          }}
+        >
+          ×
+        </span>
+        <div className="calloutMessage">
+          <p>
+            {second}-{seconds}- {message}
+          </p>
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
 export default Message;
