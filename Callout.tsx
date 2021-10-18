@@ -28,7 +28,7 @@ const Callout = (props) => {
     <React.Fragment>
       
       {props.message && (
-        <Modal isOpen={modal} toggle={toggle}>
+        <Modal isOpen={modal} toggle={toggle} className="">
           <div
             style={{
               // animationName: 'test-closed',
