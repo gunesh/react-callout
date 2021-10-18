@@ -23,9 +23,11 @@ class App extends Component<AppProps, AppState> {
       <div>
         <Hello name={this.state.name} />
        
-        <p>
+        <div className="">
           Start editing to see some magic happen :)
-        </p>
+        </div>
+
+        
       </div>
     );
   }
