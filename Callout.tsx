@@ -21,6 +21,7 @@ const Callout = (props) => {
       }, 1000);
     } else {
       props.onFinish();
+      setModal(!modal);
     }
   };
   return (

@@ -16,7 +16,7 @@ const Hello = ({ name }) => {
   return (
     <>
       <h1>Hello {name}!</h1>
-      {error && <Callout onFinish={onFinish} second={10} message={error} />}
+      {error && <Callout onFinish={onFinish} second={5} message={error} />}
       <Button color="danger" onClick={createEror}>
         Ok
       </Button>
