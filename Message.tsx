@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react';
+import React,{ useEffect, useCallback, useState } from 'react';
 
 const interval =
   (delay = 0) =>
@@ -38,11 +38,8 @@ const Message = () => {
   const { pause, reset, running, seconds, start, stop } = useTimer();
 
   return (
-    <div className="App">
+    <div  onMouseOver={pause} onLoad={start} onMouseLeave={start}>
       <h1>{seconds}</h1>
-      <button onClick={running ? pause : start}>Start/Pause</button>
-      <button onClick={reset}>Reset</button>
-      <button onClick={stop}>Stop</button>
     </div>
   );
 };
