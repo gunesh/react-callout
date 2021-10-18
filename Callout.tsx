@@ -31,12 +31,16 @@ const Callout = (props) => {
         <Modal isOpen={modal} toggle={toggle}>
           <div
             style={{
-              // transitionProperty: 'font-size',
-              // transitionDuration: '43s',
-              // transitionDelay: '233s',
+              // animationName: 'test-closed',
+              // animationDuration: '1s',
+              // animationDirection: 'backwards',
+              // animationFillMode: 'forwards',
+              // overflow: 'hidden',
+              // whiteSpace: 'nowrap',
+              
               width: `${width}%`,
               backgroundColor: 'green',
-              height: '3px',
+              height: '3px'
             }}
           />
           {/* <ModalHeader toggle={toggle}>Modal titles</ModalHeader> */}
