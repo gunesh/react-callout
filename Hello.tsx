@@ -15,6 +15,7 @@ const Hello = ({ name }) => {
     console.log('N Message');
     setError('New ');
   };
+  
   return (
     <>
       <h1>Hello {name}!</h1>
