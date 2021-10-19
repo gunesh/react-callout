@@ -18,8 +18,6 @@ const Hello = ({ name }) => {
 
   return (
     <>
-      <h1>Hello {name}!</h1>
-      {/* <Message /> */}
       {error && <Message onFinish={onFinish} second={5} message={error} />}
       <Button color="danger" onClick={createEror}>
         Ok
