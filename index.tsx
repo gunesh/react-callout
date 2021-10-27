@@ -17,12 +17,15 @@ class App extends Component<AppProps, AppState> {
       name: 'React'
     };
   }
-
+  const data = { name: 'John', age: 42 }
   render() {
     return (
       <div>
         <Hello name={this.state.name} />
       -- {React.version}--
+      <pre>
+        {JSON.stringify(this.data, null, 2)}
+      </pre>
         <div className="">
           Start editing to see some magic happen :)
         </div>
