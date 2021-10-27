@@ -22,7 +22,7 @@ class App extends Component<AppProps, AppState> {
     return (
       <div>
         <Hello name={this.state.name} />
-       
+      -- {React.version}--
         <div className="">
           Start editing to see some magic happen :)
         </div>
